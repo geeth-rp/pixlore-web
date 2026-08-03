@@ -38,7 +38,7 @@ const FashionWork = () => {
         <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 6</div>
         
         {/* ADD YOUR VIDEO HERE: Can replace this div with a <video> tag */}
-        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1'}}>
+        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1', maxHeight: '400px'}}>
           <IconVideo /> Video
         </div>
         

@@ -14,10 +14,10 @@
   --button-solid-hover: #333333;
   
   /* Glass variables */
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.7);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
 
   /* Card Variables */
   --card-flat-bg: rgba(240, 242, 245, 0.8);
@@ -43,10 +43,10 @@
   --button-solid-text: #0B0F1A;
   --button-solid-hover: #E2E8F0;
 
-  --glass-bg: rgba(19, 26, 42, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(19, 26, 42, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
   
   --card-flat-bg: rgba(30, 38, 56, 0.6);
 }
@@ -99,7 +99,7 @@ button {
   background-color: transparent;
   padding: 1.25rem;
   transition: background-color 0.3s ease;
-  overflow: hidden;
+  overflow: clip;
   position: relative;
   /* Faint background pattern inside the container too so it's visible on mobile */
   background-image: radial-gradient(var(--text-primary) 0.5px, transparent 0.5px);
@@ -124,8 +124,8 @@ button {
 /* Glass Utilities */
 .liquid-glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow), var(--glass-glow);
   border-radius: var(--radius-md);
@@ -379,12 +379,95 @@ button {
   animation-delay: -15s;
 }
 
+.blob-5 {
+  width: 800px;
+  height: 800px;
+  background-color: rgba(255, 107, 107, 0.4); /* Soft red/coral */
+  border-radius: 40% 60% 70% 30% / 50% 50% 60% 40%;
+  top: 25%;
+  left: -250px;
+  animation-delay: -7s;
+}
+
+.blob-6 {
+  width: 650px;
+  height: 650px;
+  background-color: rgba(255, 217, 61, 0.4); /* Soft yellow */
+  border-radius: 60% 40% 30% 70% / 60% 40% 60% 40%;
+  top: 60%;
+  right: 15%;
+  animation-delay: -12s;
+}
+
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(30px, -50px) scale(1.1); }
   66% { transform: translate(-20px, 20px) scale(0.9); }
   100% { transform: translate(0, 0) scale(1); }
 }
+
+/* --- Responsive Navbar Styles --- */
+
+.desktop-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.desktop-cta {
+  display: flex;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 200;
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-overlay .link-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .desktop-menu, .desktop-cta {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
 
 [data-theme='dark'] .blob {
   opacity: 0.15;

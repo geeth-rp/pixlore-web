@@ -39,7 +39,7 @@ const BusinessWork = () => {
         <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Product 6</div>
         
         {/* ADD YOUR VIDEO HERE */}
-        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1'}}>
+        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1', maxHeight: '400px'}}>
           <IconVideo /> Product Video
         </div>
         
