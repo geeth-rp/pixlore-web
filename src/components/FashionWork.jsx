@@ -29,10 +29,10 @@ const FashionWork = () => {
     <section ref={ref} className="scroll-reveal">
       <h2 style={styles.heading}>Fashion</h2>
       <div className="gallery-grid">
-        {/* ROW 1: 3 Images (16:9) */}
-        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 1</div>
-        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 2</div>
-        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 3</div>
+        {/* ROW 1: 3 Images (9:16) */}
+        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 1</div>
+        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 2</div>
+        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 3</div>
         
         {/* ROW 2: 2 Models (Left/Center) + 1 Video (Right) */}
         <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
