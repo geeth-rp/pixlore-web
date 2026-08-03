@@ -36,8 +36,8 @@ const FashionWork = () => {
     {/* FASHION CAROUSEL ITEM 3 — 9:16 */},
     <div key="img3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 3</div>,
     
-    {/* FASHION CAROUSEL ITEM 4 — 16:9 Video */},
-    <div key="vid1" className="aspect-landscape" style={styles.imageSlot}><IconVideo /> Video</div>,
+    {/* FASHION CAROUSEL ITEM 4 — 9:16 Video */},
+    <div key="vid1" className="aspect-portrait" style={styles.imageSlot}><IconVideo /> Video</div>,
 
     {/* FASHION CAROUSEL ITEM 5 — 16:9 Picture */},
     <div key="model1" className="aspect-landscape" style={styles.portraitSlot}><IconUser /> AI Model 1</div>,

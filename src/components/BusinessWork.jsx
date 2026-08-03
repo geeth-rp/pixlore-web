@@ -37,8 +37,8 @@ const BusinessWork = () => {
     {/* BUSINESS CAROUSEL ITEM 3 — 9:16 */},
     <div key="prod3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 3</div>,
     
-    {/* BUSINESS CAROUSEL ITEM 4 — 16:9 Video */},
-    <div key="vid1" className="aspect-landscape" style={styles.imageSlot}><IconVideo /> Video</div>,
+    {/* BUSINESS CAROUSEL ITEM 4 — 9:16 Video */},
+    <div key="vid1" className="aspect-portrait" style={styles.imageSlot}><IconVideo /> Video</div>,
 
     {/* BUSINESS CAROUSEL ITEM 5 — 16:9 Picture */},
     <div key="brand1" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 1</div>,
