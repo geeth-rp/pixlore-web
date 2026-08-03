@@ -1,0 +1,391 @@
+:root {
+  /* Colors */
+  --bg-color: #F8F9FA; /* Soft off-white */
+  --panel-bg: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  
+  --accent-violet: #7B6EF6;
+  --accent-cyan: #5FD4E8;
+  --accent-gold: #F2C879;
+  
+  --button-solid-bg: #1A1A1A;
+  --button-solid-text: #FFFFFF;
+  --button-solid-hover: #333333;
+  
+  /* Glass variables */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
+  /* Card Variables */
+  --card-flat-bg: rgba(240, 242, 245, 0.8);
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Shape */
+  --radius-sm: 16px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0B0F1A;
+  --panel-bg: #131A2A;
+  --text-primary: #F8F9FA;
+  --text-secondary: #A0AABF;
+  
+  --button-solid-bg: #FFFFFF;
+  --button-solid-text: #0B0F1A;
+  --button-solid-hover: #E2E8F0;
+
+  --glass-bg: rgba(19, 26, 42, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-glow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  
+  --card-flat-bg: rgba(30, 38, 56, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  /* Faint background pattern */
+  background-image: radial-gradient(var(--text-primary) 1px, transparent 1px);
+  background-size: 32px 32px;
+  /* Extremely low opacity for the dots */
+  background-position: 0 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Outer Panel Layout */
+.app-container {
+  width: 100%;
+  background-color: transparent;
+  padding: 1.25rem;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  /* Faint background pattern inside the container too so it's visible on mobile */
+  background-image: radial-gradient(var(--text-primary) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+/* Semi-transparent overlay to ensure text is readable over the pattern */
+.app-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--panel-bg);
+  z-index: -2;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 3rem 4rem;
+  }
+}
+
+/* Glass Utilities */
+.liquid-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-glow);
+  border-radius: var(--radius-md);
+}
+
+/* Calmer non-glass card for general sections */
+.flat-card {
+  background: var(--card-flat-bg);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.pill-button {
+  background-color: var(--button-solid-bg);
+  color: var(--button-solid-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-button:hover {
+  background-color: var(--button-solid-hover);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.pill-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.pill-label {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.link-text {
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.link-text::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-text:hover::after {
+  width: 100%;
+}
+
+.circular-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.circular-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.section-spacing {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+/* Aspect Ratio Utilities */
+.aspect-portrait {
+  aspect-ratio: 9 / 16;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+/* Animation Utilities */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .hover-lift:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hover-scale {
+  transition: transform 0.4s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Grid Utilities */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2-col {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+/* Background Blobs */
+.blobs-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  filter: blur(4px);
+  opacity: 0.9;
+  animation: float 25s infinite ease-in-out alternate;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+}
+
+.blob-1 {
+  width: 700px;
+  height: 700px;
+  background-color: rgba(95, 212, 232, 0.6);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  top: -100px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 900px;
+  height: 900px;
+  background-color: rgba(123, 110, 246, 0.5);
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+  top: 40%;
+  right: -300px;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 182, 255, 0.6);
+  border-radius: 30% 70% 50% 50% / 60% 40% 60% 40%;
+  bottom: -100px;
+  left: 20%;
+  animation-delay: -10s;
+}
+
+.blob-4 {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(65, 242, 166, 0.5); /* Mint green */
+  border-radius: 50% 50% 60% 40% / 60% 40% 70% 30%;
+  bottom: 20%;
+  right: -100px;
+  animation-delay: -15s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+[data-theme='dark'] .blob {
+  opacity: 0.15;
+}
