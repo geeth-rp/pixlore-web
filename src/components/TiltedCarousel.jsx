@@ -61,9 +61,7 @@ const TiltedCarousel = ({ items }) => {
           const zIndex = 100 - Math.abs(diff);
           const opacity = Math.max(1 - Math.abs(diff) * 0.25, 0); // fade out side cards
           
-          // Hide items that are too far away to improve performance and look
-          if (Math.abs(diff) > 3) return null;
-
+          // We keep all items mounted (opacity handles hiding) so they animate in smoothly without popping
           return (
             <div 
               key={index}
