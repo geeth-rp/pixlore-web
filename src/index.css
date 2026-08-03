@@ -474,3 +474,154 @@ button {
 [data-theme='dark'] .blob {
   opacity: 0.15;
 }
+
+/* ==========================================================================
+   Tilted Glass Carousel
+   ========================================================================== */
+
+.tilted-carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+  overflow: hidden; /* Contains the blobs and prevents horizontal scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+/* Background Blobs for the Carousel */
+.carousel-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.blob-violet {
+  top: 10%;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background: rgba(138, 43, 226, 0.5); /* Violet */
+}
+.blob-cyan {
+  bottom: 10%;
+  right: 20%;
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 255, 255, 0.4); /* Cyan */
+}
+.blob-gold {
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 250px;
+  background: rgba(255, 215, 0, 0.3); /* Gold */
+}
+
+/* The actual track where cards stack */
+.tilted-carousel-track {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* Base width of the center card */
+  aspect-ratio: 9/16; /* Fallback, handled by child mostly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin: 0 auto 3rem auto;
+}
+
+/* Individual Cards */
+.tilted-carousel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+              z-index 0s;
+  will-change: transform, opacity;
+  cursor: pointer;
+  
+  /* Apple Liquid Glass Styling */
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.3); /* subtle top highlight */
+  overflow: hidden;
+  
+  /* Fill container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure child media (the placeholder divs) fill the card perfectly without gaps */
+.tilted-carousel-card > div {
+  width: 100%;
+  height: 100%;
+  border: none !important; /* Override standard grid slot borders */
+  border-radius: 20px !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 20;
+}
+
+.carousel-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-primary);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  padding-bottom: 4px; /* Optically center the arrow */
+}
+
+.carousel-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.carousel-nav-btn:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilted-carousel-card {
+    transition: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tilted-carousel-track {
+    max-width: 250px;
+  }
+  .blob-gold {
+    display: none; /* Less clutter on mobile */
+  }
+}

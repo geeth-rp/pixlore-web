@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import TiltedCarousel from './TiltedCarousel';
 
 const IconCamera = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginBottom: '0.5rem'}}>
@@ -25,28 +26,30 @@ const IconUser = () => (
 const FashionWork = () => {
   const ref = useScrollReveal({ threshold: 0.1 });
 
+  const fashionItems = [
+    {/* FASHION CAROUSEL ITEM 1 — replace with real image/video */},
+    <div key="img1" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 1</div>,
+    
+    {/* FASHION CAROUSEL ITEM 2 — replace with real image/video */},
+    <div key="img2" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 2</div>,
+    
+    {/* FASHION CAROUSEL ITEM 3 — replace with real image/video */},
+    <div key="img3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 3</div>,
+    
+    {/* FASHION CAROUSEL ITEM 4 — replace with real image/video */},
+    <div key="model1" className="aspect-landscape" style={styles.portraitSlot}><IconUser /> AI Model 1</div>,
+    
+    {/* FASHION CAROUSEL ITEM 5 — replace with real image/video */},
+    <div key="model2" className="aspect-landscape" style={styles.portraitSlot}><IconUser /> AI Model 2</div>,
+    
+    {/* FASHION CAROUSEL ITEM 6 — replace with real image/video */},
+    <div key="vid1" className="aspect-landscape" style={styles.imageSlot}><IconVideo /> Video</div>
+  ].filter(item => React.isValidElement(item));
+
   return (
     <section ref={ref} className="scroll-reveal">
       <h2 style={styles.heading}>Fashion</h2>
-      <div className="gallery-grid">
-        {/* ROW 1: 3 Images (9:16) */}
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 1</div>
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 2</div>
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 3</div>
-        
-        {/* ROW 2: 2 Models (Left/Center) + 1 Video (Right) */}
-        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
-          <IconUser /> AI Model 1
-        </div>
-        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
-          <IconUser /> AI Model 2
-        </div>
-        
-        {/* VIDEO (Right side of row 2) */}
-        <div className="aspect-landscape hover-scale" style={styles.imageSlot}>
-          <IconVideo /> Video
-        </div>
-      </div>
+      <TiltedCarousel items={fashionItems} />
     </section>
   );
 };
