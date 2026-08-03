@@ -316,8 +316,29 @@ button {
 
 @media (min-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+.gallery-grid-centered-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem; /* space before the main gallery grid */
+}
+
+@media (min-width: 768px) {
+  .gallery-grid-centered-3 {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .gallery-grid-centered-3 > * {
+    grid-column: span 2; /* 2 out of 12 = 1/6 width, exactly matching the 6-grid */
+  }
+  .gallery-grid-centered-3 > *:first-child {
+    grid-column-start: 4; /* Leaves 3 columns empty on the left (1, 2, 3) to center the 3 items */
   }
 }
 
