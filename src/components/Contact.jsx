@@ -91,12 +91,14 @@ const styles = {
     color: '#fff',
     fontSize: '1.125rem',
     width: '100%',
+    whiteSpace: 'nowrap',
   },
   emailBtn: {
     backgroundColor: 'var(--text-primary)',
     color: 'var(--bg-color)',
     fontSize: '1.125rem',
     width: '100%',
+    whiteSpace: 'nowrap',
   }
 };
 

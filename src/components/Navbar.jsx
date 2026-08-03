@@ -119,7 +119,7 @@ const styles = {
     marginBottom: '4rem',
     position: 'sticky',
     top: '1rem',
-    zIndex: 100,
+    zIndex: 300,
     transition: 'padding 0.3s ease, backdrop-filter 0.3s ease, background 0.3s ease',
   },
   navScrolled: {
