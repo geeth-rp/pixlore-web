@@ -29,30 +29,28 @@ const BusinessWork = () => {
   return (
     <section ref={ref} className="scroll-reveal">
       <h2 style={styles.heading}>Business & Product</h2>
-      <div className="gallery-grid-centered-3">
+      <div className="gallery-grid">
         {/* ADD YOUR PHOTO HERE: Replace backgroundColor with backgroundImage url() */}
         <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Product 1</div>
         <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Product 2</div>
         <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Product 3</div>
-      </div>
-      
-      <div className="gallery-grid">
-        {/* ADD YOUR VIDEO HERE: Can replace this div with a <video> tag */}
-        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1', maxHeight: '400px'}}>
-          <IconVideo /> Video
-        </div>
         
         {/* ADD PRODUCT MODEL IMAGE 1 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 1
         </div>
         {/* ADD PRODUCT MODEL IMAGE 2 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 2
         </div>
         {/* ADD PRODUCT MODEL IMAGE 3 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 3
+        </div>
+
+        {/* ADD YOUR VIDEO HERE: Can replace this div with a <video> tag */}
+        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1', maxHeight: '400px'}}>
+          <IconVideo /> Video
         </div>
       </div>
     </section>
