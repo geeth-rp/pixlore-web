@@ -1,4 +1,5 @@
 import React from 'react';
+import logoUrl from '../assets/logo.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // === EDIT THESE CONSTANTS ===
@@ -17,7 +18,7 @@ const Contact = () => {
         <div style={styles.left}>
           {/* LOGO PHOTO — replace with real logo or image later */}
           <div style={styles.avatarPlaceholder}>
-            <img src="/logo.png" alt="Pix Lore Logo" style={styles.contactLogo} />
+            <img src={logoUrl} alt="Pix Lore Logo" style={styles.contactLogo} />
           </div>
           <h3 style={styles.heading}>Ready to transform your brand content?</h3>
           <p style={styles.desc}>Get in touch today and let's discuss how AI can elevate your visual identity.</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import logoUrl from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div style={styles.top}>
         <div style={styles.brand}>
           <div style={styles.logoRow}>
-            <img src="/logo.png" alt="Pix Lore Logo" style={styles.logoImg} />
+            <img src={logoUrl} alt="Pix Lore Logo" style={styles.logoImg} />
             <h2 style={styles.logo}>Pix Lore</h2>
           </div>
           <p style={styles.tagline}>AI Content Creation Studio</p>

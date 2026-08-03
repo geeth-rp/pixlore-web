@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoUrl from '../assets/logo.png';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className="liquid-glass" style={{ ...styles.nav, ...(scrolled ? styles.navScrolled : {}) }}>
       <div style={styles.logoContainer}>
-        <img src="/logo.png" alt="Pix Lore Logo" style={styles.logoImg} />
+        <img src={logoUrl} alt="Pix Lore Logo" style={styles.logoImg} />
         <div style={styles.logo}>
           Pix Lore
         </div>
