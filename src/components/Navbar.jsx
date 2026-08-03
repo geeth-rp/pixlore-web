@@ -82,6 +82,7 @@ const styles = {
   logoImg: {
     height: '32px',
     width: 'auto',
+    borderRadius: '8px',
   },
   logo: {
     fontSize: '1.5rem',
