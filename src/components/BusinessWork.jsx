@@ -1,6 +1,9 @@
 import React from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import TiltedCarousel from './TiltedCarousel';
+import businessImg1 from '../assets/business-1.jpg';
+import businessImg2 from '../assets/business-2.jpg';
+import businessImg3 from '../assets/business-3.jpg';
 
 const IconCamera = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginBottom: '0.5rem'}}>
@@ -29,13 +32,13 @@ const BusinessWork = () => {
 
   const businessItems = [
     {/* BUSINESS CAROUSEL ITEM 1 — 9:16 */},
-    <div key="prod1" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 1</div>,
+    <img key="prod1" src={businessImg1} alt="Business 1" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
     
     {/* BUSINESS CAROUSEL ITEM 2 — 9:16 */},
-    <div key="prod2" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 2</div>,
+    <img key="prod2" src={businessImg2} alt="Business 2" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
     
     {/* BUSINESS CAROUSEL ITEM 3 — 9:16 */},
-    <div key="prod3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 3</div>,
+    <img key="prod3" src={businessImg3} alt="Business 3" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
     
     {/* BUSINESS CAROUSEL ITEM 4 — 9:16 Video */},
     <div key="vid1" className="aspect-portrait" style={styles.imageSlot}><IconVideo /> Video</div>,
