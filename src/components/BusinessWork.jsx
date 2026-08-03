@@ -28,28 +28,28 @@ const BusinessWork = () => {
   const ref = useScrollReveal({ threshold: 0.1 });
 
   const businessItems = [
-    {/* BUSINESS CAROUSEL ITEM 1 — replace with real image/video */},
+    {/* BUSINESS CAROUSEL ITEM 1 — 9:16 */},
     <div key="prod1" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 1</div>,
     
-    {/* BUSINESS CAROUSEL ITEM 2 — replace with real image/video */},
+    {/* BUSINESS CAROUSEL ITEM 2 — 9:16 */},
     <div key="prod2" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 2</div>,
     
-    {/* BUSINESS CAROUSEL ITEM 3 — replace with real image/video */},
+    {/* BUSINESS CAROUSEL ITEM 3 — 9:16 */},
     <div key="prod3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Product 3</div>,
     
-    {/* BUSINESS CAROUSEL ITEM 4 — replace with real image/video */},
+    {/* BUSINESS CAROUSEL ITEM 4 — 16:9 Video */},
+    <div key="vid1" className="aspect-landscape" style={styles.imageSlot}><IconVideo /> Video</div>,
+
+    {/* BUSINESS CAROUSEL ITEM 5 — 16:9 Picture */},
     <div key="brand1" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 1</div>,
     
-    {/* BUSINESS CAROUSEL ITEM 5 — replace with real image/video */},
-    <div key="brand2" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 2</div>,
-    
-    {/* BUSINESS CAROUSEL ITEM 6 — replace with real image/video */},
-    <div key="vid1" className="aspect-landscape" style={styles.imageSlot}><IconVideo /> Video</div>
+    {/* BUSINESS CAROUSEL ITEM 6 — 16:9 Picture */},
+    <div key="brand2" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 2</div>
   ].filter(item => React.isValidElement(item));
 
   return (
     <section ref={ref} className="scroll-reveal">
-      <h2 style={styles.heading}>Business & Product</h2>
+      <h2 style={{...styles.heading, textAlign: 'center', fontWeight: 'bold'}}>Business & Product</h2>
       <TiltedCarousel items={businessItems} />
     </section>
   );
