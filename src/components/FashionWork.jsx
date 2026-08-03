@@ -29,26 +29,21 @@ const FashionWork = () => {
     <section ref={ref} className="scroll-reveal">
       <h2 style={styles.heading}>Fashion</h2>
       <div className="gallery-grid">
-        {/* ADD YOUR PHOTO HERE: Replace backgroundColor with backgroundImage url() */}
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 1</div>
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 2</div>
-        <div className="aspect-portrait hover-scale" style={styles.imageSlot}><IconCamera /> Image 3</div>
+        {/* ROW 1: 3 Images (16:9) */}
+        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 1</div>
+        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 2</div>
+        <div className="aspect-landscape hover-scale" style={styles.imageSlot}><IconCamera /> Image 3</div>
         
-        {/* ADD AI MODEL IMAGE 1 */}
-        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
+        {/* ROW 2: 2 Models (Left/Center) + 1 Video (Right) */}
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconUser /> AI Model 1
         </div>
-        {/* ADD AI MODEL IMAGE 2 */}
-        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconUser /> AI Model 2
         </div>
-        {/* ADD AI MODEL IMAGE 3 */}
-        <div className="aspect-portrait hover-scale" style={styles.portraitSlot}>
-          <IconUser /> AI Model 3
-        </div>
-
-        {/* ADD YOUR VIDEO HERE: Can replace this div with a <video> tag */}
-        <div className="aspect-landscape hover-scale" style={{...styles.imageSlot, gridColumn: '1 / -1', maxHeight: '400px'}}>
+        
+        {/* VIDEO (Right side of row 2) */}
+        <div className="aspect-landscape hover-scale" style={styles.imageSlot}>
           <IconVideo /> Video
         </div>
       </div>
