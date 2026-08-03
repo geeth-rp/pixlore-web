@@ -69,7 +69,7 @@ const TiltedCarousel = ({ items }) => {
               key={index}
               className={`tilted-carousel-card ${diff === 0 ? 'active' : ''}`}
               style={{
-                transform: `translateX(${translateX}%) translateY(${translateY}px) rotateZ(${rotateZ}deg) scale(${scale})`,
+                transform: `translate(-50%, -50%) translateX(${translateX}%) translateY(${translateY}px) rotateZ(${rotateZ}deg) scale(${scale})`,
                 zIndex,
                 opacity,
                 pointerEvents: diff === 0 ? 'auto' : 'none',

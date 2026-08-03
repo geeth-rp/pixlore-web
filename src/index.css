@@ -526,9 +526,10 @@ button {
 /* The actual track where cards stack */
 .tilted-carousel-track {
   position: relative;
-  width: 100%;
-  max-width: 350px; /* Base width of the center card */
-  aspect-ratio: 9/16; /* Fallback, handled by child mostly */
+  height: 50vh; /* Reduced height to fit on screen with arrows and title */
+  max-height: 420px;
+  aspect-ratio: 9/16;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -539,7 +540,10 @@ button {
 /* Individual Cards */
 .tilted-carousel-card {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
+  height: auto;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
               opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
               z-index 0s;
