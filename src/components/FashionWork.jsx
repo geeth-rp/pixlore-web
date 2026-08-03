@@ -43,15 +43,15 @@ const FashionWork = () => {
         </div>
         
         {/* ADD AI MODEL IMAGE 1 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconUser /> AI Model 1
         </div>
         {/* ADD AI MODEL IMAGE 2 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconUser /> AI Model 2
         </div>
         {/* ADD AI MODEL IMAGE 3 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconUser /> AI Model 3
         </div>
       </div>

@@ -44,15 +44,15 @@ const BusinessWork = () => {
         </div>
         
         {/* ADD PRODUCT MODEL IMAGE 1 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 1
         </div>
         {/* ADD PRODUCT MODEL IMAGE 2 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 2
         </div>
         {/* ADD PRODUCT MODEL IMAGE 3 */}
-        <div className="aspect-landscape hover-scale" style={{...styles.portraitSlot, gridColumn: 'span 2'}}>
+        <div className="aspect-landscape hover-scale" style={styles.portraitSlot}>
           <IconPackage /> Brand Setting 3
         </div>
       </div>
