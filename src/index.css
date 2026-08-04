@@ -436,10 +436,11 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: var(--overlay-bg);
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
-  z-index: 200;
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  box-shadow: inset 0 0 0 1px var(--glass-border);
+  z-index: 250;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -448,17 +449,47 @@ button {
   padding: 2rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-20px);
 }
 
 .mobile-overlay.open {
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0);
 }
 
 .mobile-overlay .link-text {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mobile-overlay.open .link-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-overlay.open .link-text:nth-child(1) { transition-delay: 0.1s; }
+.mobile-overlay.open .link-text:nth-child(2) { transition-delay: 0.15s; }
+.mobile-overlay.open .link-text:nth-child(3) { transition-delay: 0.2s; }
+.mobile-overlay.open .link-text:nth-child(4) { transition-delay: 0.25s; }
+
+.mobile-overlay .themeToggle {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mobile-overlay.open .themeToggle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 @media (max-width: 850px) {

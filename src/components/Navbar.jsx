@@ -84,7 +84,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         <a href="#packages" className="link-text" style={styles.link} onClick={closeMenu}>Packages</a>
         <a href="#faq" className="link-text" style={styles.link} onClick={closeMenu}>FAQ</a>
         <a href="#contact" className="link-text" style={styles.link} onClick={closeMenu}>Contact</a>
-        <button onClick={() => { toggleTheme(); closeMenu(); }} style={styles.themeToggle} aria-label="Toggle theme">
+        <button className="themeToggle" onClick={() => { toggleTheme(); closeMenu(); }} style={styles.themeToggle} aria-label="Toggle theme">
           <div style={{ ...styles.iconWrapper, transform: theme === 'dark' ? 'rotate(180deg)' : 'rotate(0)' }}>
             {theme === 'light' ? (
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
