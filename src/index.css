@@ -566,14 +566,21 @@ button {
   justify-content: center;
 }
 
-/* Ensure child media (the placeholder divs) fill the card perfectly without gaps */
-.tilted-carousel-card > div {
+/* Ensure child media fill the card perfectly without gaps */
+.tilted-carousel-card > * {
   height: 100%;
   width: auto;
-  border: none !important; /* Override standard grid slot borders */
+  border: none !important;
   border-radius: 20px !important;
   margin: 0 !important;
   box-shadow: none !important;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .tilted-carousel-card > * {
+    max-width: 85vw;
+  }
 }
 
 /* Navigation Buttons */

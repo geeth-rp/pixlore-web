@@ -3,6 +3,10 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import TiltedCarousel from './TiltedCarousel';
 import fashionModel1 from '../assets/fashion-model-1.jpg';
 import fashionModel2 from '../assets/fashion-model-2.jpg';
+import fashionImg1 from '../assets/Fashion-1.jpg';
+import fashionImg2 from '../assets/Fashion-2.jpg';
+import fashionImg3 from '../assets/Fashion-3.jpg';
+import fashionVideo from '../assets/fashion-brand-video.mp4';
 
 const IconCamera = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginBottom: '0.5rem'}}>
@@ -30,22 +34,22 @@ const FashionWork = () => {
 
   const fashionItems = [
     {/* FASHION CAROUSEL ITEM 1 — 9:16 */},
-    <div key="img1" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 1</div>,
+    <img key="img1" src={fashionImg1} alt="Fashion 1" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* FASHION CAROUSEL ITEM 2 — 9:16 */},
-    <div key="img2" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 2</div>,
+    <img key="img2" src={fashionImg2} alt="Fashion 2" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* FASHION CAROUSEL ITEM 3 — 9:16 */},
-    <div key="img3" className="aspect-portrait" style={styles.imageSlot}><IconCamera /> Image 3</div>,
+    <img key="img3" src={fashionImg3} alt="Fashion 3" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* FASHION CAROUSEL ITEM 4 — 9:16 Video */},
-    <div key="vid1" className="aspect-portrait" style={styles.imageSlot}><IconVideo /> Video</div>,
+    <video key="vid1" src={fashionVideo} className="aspect-portrait media-item" autoPlay muted loop playsInline preload="metadata" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
 
     {/* FASHION CAROUSEL ITEM 5 — 16:9 Picture */},
-    <img key="model1" src={fashionModel1} alt="Fashion Model 1" className="aspect-landscape" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
+    <img key="model1" src={fashionModel1} alt="Fashion Model 1" className="aspect-landscape media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* FASHION CAROUSEL ITEM 6 — 16:9 Picture */},
-    <img key="model2" src={fashionModel2} alt="Fashion Model 2" className="aspect-landscape" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+    <img key="model2" src={fashionModel2} alt="Fashion Model 2" className="aspect-landscape media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />
   ].filter(item => React.isValidElement(item));
 
   return (

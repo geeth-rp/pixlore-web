@@ -4,6 +4,9 @@ import TiltedCarousel from './TiltedCarousel';
 import businessImg1 from '../assets/business-1.jpg';
 import businessImg2 from '../assets/business-2.jpg';
 import businessImg3 from '../assets/business-3.jpg';
+import businessBrand1 from '../assets/business-brand-1.jpg';
+import businessBrand2 from '../assets/business-brand-2.jpg';
+import businessVideo from '../assets/business-brand-video.mp4';
 
 const IconCamera = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginBottom: '0.5rem'}}>
@@ -32,22 +35,22 @@ const BusinessWork = () => {
 
   const businessItems = [
     {/* BUSINESS CAROUSEL ITEM 1 — 9:16 */},
-    <img key="prod1" src={businessImg1} alt="Business 1" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
+    <img key="prod1" src={businessImg1} alt="Business 1" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* BUSINESS CAROUSEL ITEM 2 — 9:16 */},
-    <img key="prod2" src={businessImg2} alt="Business 2" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
+    <img key="prod2" src={businessImg2} alt="Business 2" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* BUSINESS CAROUSEL ITEM 3 — 9:16 */},
-    <img key="prod3" src={businessImg3} alt="Business 3" className="aspect-portrait" style={{width: '100%', height: '100%', objectFit: 'cover'}} />,
+    <img key="prod3" src={businessImg3} alt="Business 3" className="aspect-portrait media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* BUSINESS CAROUSEL ITEM 4 — 9:16 Video */},
-    <div key="vid1" className="aspect-portrait" style={styles.imageSlot}><IconVideo /> Video</div>,
+    <video key="vid1" src={businessVideo} className="aspect-portrait media-item" autoPlay muted loop playsInline preload="metadata" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
 
     {/* BUSINESS CAROUSEL ITEM 5 — 16:9 Picture */},
-    <div key="brand1" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 1</div>,
+    <img key="brand1" src={businessBrand1} alt="Business Brand 1" className="aspect-landscape media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />,
     
     {/* BUSINESS CAROUSEL ITEM 6 — 16:9 Picture */},
-    <div key="brand2" className="aspect-landscape" style={styles.portraitSlot}><IconPackage /> Brand Setting 2</div>
+    <img key="brand2" src={businessBrand2} alt="Business Brand 2" className="aspect-landscape media-item" loading="lazy" onContextMenu={(e) => e.preventDefault()} draggable={false} />
   ].filter(item => React.isValidElement(item));
 
   return (
